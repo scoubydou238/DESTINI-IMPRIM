@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DESTINI-IMPRIM - Commande et Paiement</title>
+  <script src="https://cdn.cinetpay.com/seamless/main.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: url('ordi.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    header {
+      background-color: #003366cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    header img {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 60px;
+    }
+    h1 {
+      margin: 0;
+    }
+    main {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      margin: 20px;
+    }
+    form {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+    }
+    label, select, input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button[type="button"], button[type="submit"] {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .confirmation {
+      color: green;
+      font-weight: bold;
+    }
+    .produits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .produit {
+      width: 200px;
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .produit img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background: #003366cc;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    .map {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="LOGO DESTIini 2.jpg" alt="Logo DESTINI">
+    <h1>DESTINI-IMPRIM</h1>
+    <p>Exprimez-vous, on imprime pour vous !</p>
+  </header>
+
+  <main>
+    <form id="commandeForm">
+      <label for="produit">Choisissez un produit :</label><br>
+      <select id="produit" required>
+        <option value="" disabled selected>-- Sélectionnez un produit --</option>
+        <option value="T-shirt">T-shirt personnalisé</option>
+        <option value="Polo">Polo personnalisé</option>
+        <option value="Étiquette">Étiquette imprimée</option>
+        <option value="Document">Impression de documents (50 F / page)</option>
+      </select><br>
+
+      <div id="varianteContainer" style="display:none;">
+        <label for="variante">Choisissez une variante :</label><br>
+        <select id="variante"></select><br>
+      </div>
+
+      <label for="quantite">Quantité :</label><br>
+      <input type="number" id="quantite" min="1" value="1" required><br>
+
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
+        <button type="submit">Commander</button>
+        <a href="https://wa.me/2250748252328?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20une%20commande%20chez%20DESTINI-IMPRIM" target="_blank" style="text-decoration: none;">
+          <button type="button" style="background-color: #25D366; color: white; padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer;">
+            📱 Discuter avec le service commercial
+          </button>
+        </a>
+      </div>
+    </form>
+
+    <div id="confirmation" class="confirmation"></div>
+
+    <section class="produits">
+      <div class="produit">
+        <img src="tea-shirt.jpg" alt="T-shirt personnalisé">
+        <p>T-shirt personnalisé</p>
+      </div>
+      <div class="produit">
+        <img src="tea-shirt.jpg" alt="Polo personnalisé">
+        <p>Polo personnalisé</p>
+      </div>
+      <div class="produit">
+        <img src="etiquette.jpg" alt="Étiquette imprimée">
+        <p>Étiquette imprimée</p>
+      </div>
+      <div class="produit">
+        <img src="document.jpg" alt="Impression de documents">
+        <p>Impression de documents (50 F la page)</p>
+      </div>
+      <div class="produit">
+        <img src="ordinateur.jpg" alt="Ordinateur">
+        <p>Services informatiques</p>
+      </div>
+    </section>
+
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.677538836375!2d-6.096011685682513!3d4.950845296321184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc9a43e0f3ebaf0d%3A0x837b9d23b5b1d6db!2sInspection%20de%20l&#39;Enseignement%20Pr%C3%A9scolaire%20et%20Primaire%20de%20Sassandra!5e0!3m2!1sfr!2sci!4v1715526000000!5m2!1sfr!2sci" width="100%" height="300" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 DESTINI-IMPRIM. Tous droits réservés.<br>
+    📞 07 48 25 23 28 / 05 94 72 75 28<br>
+    💬 WhatsApp disponible<br>
+    🏠 Sassandra, quartier Groudou, à côté de la poissonnerie, juste en face de l'école Plage
+  </footer>
+
+  <script>
+    const produitSelect = document.getElementById("produit");
+    const varianteSelect = document.getElementById("variante");
+    const varianteContainer = document.getElementById("varianteContainer");
+
+    const variantesParProduit = {
+      "T-shirt": [
+        { nom: "Standard (1500 F)", prix: 1500 },
+        { nom: "Premium (2500 F)", prix: 2500 }
+      ],
+      "Polo": [
+        { nom: "Standard (3000 F)", prix: 3000 },
+        { nom: "Premium (5000 F)", prix: 5000 }
+      ]
+    };
+
+    produitSelect.addEventListener("change", function () {
+      const produit = produitSelect.value;
+      if (variantesParProduit[produit]) {
+        varianteContainer.style.display = "block";
+        varianteSelect.innerHTML = "";
+        variantesParProduit[produit].forEach(option => {
+          const opt = document.createElement("option");
+          opt.value = option.prix;
+          opt.textContent = option.nom;
+          varianteSelect.appendChild(opt);
+        });
+      } else {
+        varianteContainer.style.display = "none";
+        varianteSelect.innerHTML = "";
+      }
+    });
+
+    document.getElementById("commandeForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const produit = produitSelect.value;
+      const quantite = parseInt(document.getElementById("quantite").value);
+      let prixUnitaire = 0;
+
+      if (quantite <= 0) {
+        alert("Veuillez entrer une quantité valide.");
+        return;
+      }
+
+      if (variantesParProduit[produit]) {
+        prixUnitaire = parseInt(varianteSelect.value);
+      } else if (produit === "Étiquette") {
+        prixUnitaire = 100;
+      } else if (produit === "Document") {
+        prixUnitaire = 50;
+      } else {
+        alert("Produit non valide ou sans prix défini.");
+        return;
+      }
+
+      const montant = quantite * prixUnitaire;
+      const transactionId = "DESTINI-" + Date.now();
+
+      CinetPay.setConfig({
+        apikey: "10868348836821d72c7cc3a3.57915777",
+        site_id: "105894853",
+        notify_url: "https://destini-ci.com/notify.php",
+        mode: "PRODUCTION"
+      });
+
+      CinetPay.getCheckout({
+        transaction_id: transactionId,
+        amount: montant.toString(),
+        currency: "XOF",
+        channels: "ALL",
+        description: `Commande de ${quantite} ${produit}(s) à ${prixUnitaire} F l’unité`
+      });
+
+      CinetPay.waitResponse(function(data) {
+        if (data.status === "REFUSED") {
+          alert("Paiement refusé");
+        }
+        if (data.status === "ACCEPTED") {
+          document.getElementById("confirmation").innerText = "Commande confirmée. Paiement accepté !";
+        }
+      });
+
+      CinetPay.onError(function(data) {
+        alert("Erreur lors du paiement : " + data.message);
+      });
+    });
+  </script>
+</body>
+</html>
